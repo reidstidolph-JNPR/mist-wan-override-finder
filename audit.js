@@ -141,7 +141,7 @@ async function main() {
 
       if (device[setting] && Object.keys(device[setting]).length > 0 ) {
         // console.log(`'${device.name}' at site '${sites[device.site_id].name}' has overwrites to the '${setting}' setting.`)
-        results.logs.push(`'${device.name}' at site '${sites[device.site_id].name}' has overwrites to the '${setting}' setting`)
+        results.logs.push(`'${device.name}' at site '${sites[device.site_id].name}' has overrides to the '${setting}' setting`)
         deviceHasOverride = true
         //console.log(device)
       }
