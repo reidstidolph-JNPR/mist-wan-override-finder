@@ -11,7 +11,7 @@ const restReqConfig = { headers: { Authorization: `Token ${apiToken}` } }
 // template config keys
 // each value in this array represents a template setting
 // that will be evaluated in device config, to determine if it is overidden
-const templateConfigParams = [
+const templateConfigParams = require('./env.json').settings || [
   'port_config',
   'oob_ip_config',
   'ip_configs',
@@ -152,9 +152,12 @@ async function main() {
   }
 
   console.log(`${results.overrideDeviceCount} of ${results.deviceCount} devices with WAN edge site templates have device-level overrides.`)
-  console.log('details:')
-  for (const log in results.logs) {
-    console.log(` - ${results.logs[log]}`)
+  
+  if ( results.overrideDeviceCount > 0 ) {
+    console.log('details:')
+    for (const log in results.logs) {
+      console.log(` - ${results.logs[log]}`)
+    }
   }
 }
 
