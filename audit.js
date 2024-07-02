@@ -115,7 +115,7 @@ async function main() {
     if (
       // only take node0 device mac for clustered devices
       (device.mac === device.node0_mac || !device.node0_mac) && 
-      // only take devices with assigned WAN template
+      // only take devices assigned to sites with a WAN template
       sites[device.site_id].gatewaytemplate_id !== null
     ) {
       let result = await getDevice(device.site_id, device.mac)
@@ -126,6 +126,7 @@ async function main() {
 
   console.log('device config retrieved, processing...')
 
+  // object storing results of config processing
   let results = {
     deviceCount : deviceConfigs.length,
     overrideDeviceCount : 0,
@@ -137,6 +138,9 @@ async function main() {
 
     let deviceHasOverride = false
     
+    // go through each overridable template parameter
+    // evaluting if the device has the property present,
+    // and if it has values overriding the template
     templateConfigParams.forEach((setting) => {
 
       if (device[setting] && Object.keys(device[setting]).length > 0 ) {
