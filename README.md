@@ -2,10 +2,14 @@
 
 This app audits an org to find devices that have deviated from WAN edge templates with device-level overrides.
 
-## Prerequisites
+## Prerequisites and Setup
 
-1. Have Docker and `docker-compose` installed.
-2. Create a file called `env.json` with properties for `orgId`, `token` (API token), and `envBaseUrl` (base URL for API calls). Example:
+1. Have Docker (and optionally `docker-compose`) installed.
+2. Clone repo and `cd` to the directory
+```
+git clone https://github.com/reidstidolph-JNPR/mist-wan-override-finder.git && cd mist-wan-override-finder
+```
+3. Create a file called `env.json` with properties for `orgId`, `token` (API token), and `envBaseUrl` (base URL for API calls). Example:
 
 ```json
 {
