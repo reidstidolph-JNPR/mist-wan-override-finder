@@ -10,4 +10,4 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-CMD 'node audit.js'
+CMD ["node", "audit.js"]

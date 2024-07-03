@@ -6,3 +6,5 @@ services:
     volumes:
       - ${PWD}/env.json:/home/node/app/env.json
     command: "node audit.js"
+    container_name: "config-audit"
+    image: "config-audit"
