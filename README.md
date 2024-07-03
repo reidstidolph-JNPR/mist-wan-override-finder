@@ -29,7 +29,7 @@ Use this if you only have Docker.
 
 1. Build a docker image:
 ```
-docker build -t config-audit
+docker build -t config-audit .
 ```
 2. Run it:
 ```
