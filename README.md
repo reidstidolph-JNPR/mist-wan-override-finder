@@ -23,23 +23,23 @@ Use 1 of the following 2 options run the script:
 
 Use this if you only have Docker.
 
-Build a docker-image:
+1. Build a docker-image:
 ```
 docker build -t config-audit
 ```
-Run it:
+2. Run it:
 ```
 docker run --rm config-audit
 ```
 
 ### with `docker-compose`
 
-Use this is you have Docker + docker-compose.
+1. Use this is you have Docker + docker-compose.
 ```
 docker-compose run --rm config-audit
 ```
 
-Example output:
+### Example output:
 ```
 % docker run --rm config-audit
 getting sites...
