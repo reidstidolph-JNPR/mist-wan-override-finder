@@ -23,13 +23,24 @@ Use 1 of the following 2 options run the script:
 
 Use this if you only have Docker.
 
-1. Build a docker-image:
+1. Build a docker image:
 ```
 docker build -t config-audit
 ```
 2. Run it:
 ```
-docker run --rm config-audit
+docker run --rm -v ./env.json:/home/node/app/env.json config-audit
+```
+
+This creates a one-time container based on the image, and destroys it when finished. 
+
+Alternatively, to create as a persistent container:
+```
+docker create --name config-audit -v ./env.json:/home/node/app/env.json config-audit
+```
+Then to run subsequently:
+```
+docker start -i config-audit
 ```
 
 ### with `docker-compose`
