@@ -17,8 +17,11 @@ This app audits an org to find devices that have deviated from WAN edge template
 
 ## Build and Run
 
-To run the script:
+Use 1 of the following 2 options run the script:
+
 ### with just Docker
+
+Use this if you only have Docker.
 
 Build a docker-image:
 ```
@@ -30,6 +33,8 @@ docker run --rm config-audit
 ```
 
 ### with `docker-compose`
+
+Use this is you have Docker + docker-compose.
 ```
 docker-compose run --rm config-audit
 ```
