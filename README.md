@@ -18,25 +18,25 @@ This app audits an org to find devices that have deviated from WAN edge template
 ## Build and Run
 
 To run the script:
-### With just Docker
+### with just Docker
 
 Build a docker-image:
 ```
-docker build -t
+docker build -t config-audit
 ```
 Run it:
 ```
 docker run --rm config-audit
 ```
 
-### With `docker-compose`
+### with `docker-compose`
 ```
 docker-compose run --rm config-audit
 ```
 
 Example output:
 ```
-% docker-compose run --rm config-audit
+% docker run --rm config-audit
 getting sites...
 getting WAN edge inventory...
 getting device configs...
